@@ -24,8 +24,8 @@ jobs:
       - name: Install simpleicons package
         run: |
           wget https://github.com/ineshbose/simple-icons-latex/releases/download/13.13.0/simpleicons.zip
-          unzip simpleicons.zip -d simpleicons
-          sudo cp simpleicons/simpleicons/tex/simpleicons.sty /usr/share/texlive/texmf-dist/tex/latex/simpleicons/
+          unzip simpleicons.zip -d /usr/local/texlive/2021/texmf-dist/tex/latex/simpleicons
+          #sudo cp simpleicons/simpleicons/tex/simpleicons.sty /usr/share/texlive/texmf-dist/tex/latex/simpleicons/
           sudo texhash
 
       - name: LaTeX build
