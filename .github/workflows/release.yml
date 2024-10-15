@@ -1,0 +1,37 @@
+name: Release Resume
+
+on:
+  release:
+    types: [ published ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: LaTeX build
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: CV.tex
+
+      - name: Upload resume to the GitHub release that triggered the workflow
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} CV.pdf
+          gh release upload ${{ github.event.release.tag_name }} CV.tex
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Move resume.pdf to a different folder
+        run: |
+          mkdir ../gh-pages
+          mv CV.pdf ../gh-pages
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ../gh-pages
