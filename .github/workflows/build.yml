@@ -31,11 +31,11 @@ jobs:
       - name: LaTeX build
         uses: dante-ev/latex-action@latest
         with:
-          root_file: CV.tex
+          root_file: resume.tex
 
       - name: Upload a Build artifact
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: CV.pdf
-          path: CV.pdf
+          name: resume.pdf
+          path: resume.pdf
 
