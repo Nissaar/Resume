@@ -29,7 +29,7 @@ jobs:
           #     sudo texhash
 
       - name: LaTeX build
-        uses: dante-ev/latex-action@2021-A
+        uses: fudan-mse/latex-action@v0.0.1
         with:
           root_file: CV.tex
 
