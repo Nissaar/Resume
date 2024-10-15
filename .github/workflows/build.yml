@@ -18,7 +18,7 @@ jobs:
       - name: LaTeX build
         uses: dante-ev/latex-action@2021-A
         with:
-          root_file: CV.tex
+          root_file: ../../CV.tex
 
       - name: Upload a Build artifact
         uses: actions/upload-artifact@v4.4.3
