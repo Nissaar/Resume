@@ -16,9 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: LaTeX build
-          uses: dante-ev/latex-action@2021-A
-          with:
-            root_file: CV.tex
+        uses: dante-ev/latex-action@2021-A
+        with:
+          root_file: CV.tex
 
                 - name: Upload a Build Artifact
       - name: Upload a Build artifact
