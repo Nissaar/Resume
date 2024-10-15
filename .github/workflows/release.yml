@@ -22,19 +22,19 @@ jobs:
       - name: LaTeX build
         uses: dante-ev/latex-action@latest
         with:
-          root_file: CV.tex
+          root_file: resume.tex
 
       - name: Upload resume to the GitHub release that triggered the workflow
         run: |
-          gh release upload ${{ github.event.release.tag_name }} CV.pdf
-          gh release upload ${{ github.event.release.tag_name }} CV.tex
+          gh release upload ${{ github.event.release.tag_name }} resume.pdf
+          gh release upload ${{ github.event.release.tag_name }} resume.tex
         env:
           GH_TOKEN: ${{ github.token }}
 
       - name: Move resume.pdf to a different folder
         run: |
           mkdir ../gh-pages
-          mv CV.pdf ../gh-pages
+          mv resume.pdf ../gh-pages
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
