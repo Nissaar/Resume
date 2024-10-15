@@ -44,7 +44,8 @@
 \RequirePackage[margin=2cm]{geometry}
 \RequirePackage[fixed]{fontawesome5}
 % v1.7.2 Add simpleicons to provide X icon
-\RequirePackage{simpleicons}
+%\RequirePackage{simpleicons}
+\usepackage{simpleicons}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
