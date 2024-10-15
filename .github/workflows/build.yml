@@ -21,12 +21,12 @@ jobs:
           #sudo apt-get update
           #sudo apt-get install -y texlive-full
 
-      - name: Install simpleicons package
-        run: |
-          wget https://mirrors.ctan.org/macros/latex/contrib/simpleicons.zip
-          unzip simpleicons.zip -d simpleicons
-          sudo cp simpleicons/simpleicons.sty /usr/share/texlive/texmf-dist/tex/latex/simpleicons/
-          sudo texhash
+          #- name: Install simpleicons package
+          #run: |
+          #wget https://mirrors.ctan.org/macros/latex/contrib/simpleicons.zip
+          #unzip simpleicons.zip -d simpleicons
+          #sudo cp simpleicons/simpleicons.sty /usr/share/texlive/texmf-dist/tex/latex/simpleicons/
+          #sudo texhash
 
       - name: LaTeX build
         uses: dante-ev/latex-action@2021-A
