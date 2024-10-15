@@ -16,10 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up LaTeX environment
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full
+          #- name: Set up LaTeX environment
+          #run: |
+          #sudo apt-get update
+          #sudo apt-get install -y texlive-full
 
       - name: Install simpleicons package
         run: |
