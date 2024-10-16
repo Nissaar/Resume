@@ -23,8 +23,10 @@ jobs:
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
-          name: resume.pdf.zip
-          path: resume.pdf.zip
+          name: resume.pdf
+          path: resume.pdf
+        env:
+          GITHUB_TOKEN: ${{ github.token }
 
       - name: Start a web server
         run: |
@@ -33,8 +35,6 @@ jobs:
 
       - name: Modify HTML to use the generated PDF
         run: |
-          apt-get install unzip
-          unzip resume.pdf.zip
           sed -i 's|https://resume.mgopee.tech/resume.pdf|resume.pdf|' index.html
 
       - name: Install dependencies
