@@ -43,9 +43,11 @@ jobs:
           sed -i 's|https://resume.mgopee.tech/resume.pdf|resume.pdf|' index.html
 
       - name: Screenshot
-        uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
+        uses: "swinton/screenshot-website@v1.x"
         with:
-          url: http://localhost:8080/index.html
+          source: http://localhost:8080/index.html
+          destination: screenshot.png
+          full-page: true
 
       - name: Upload screenshot
         uses: actions/upload-artifact@v4
