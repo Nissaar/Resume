@@ -27,12 +27,11 @@ jobs:
           name: resume.pdf
           path: resume.pdf
 
-      - name: Download the generated PDF
-        uses: actions/download-artifact@v4
-        with:
-          workflow: build.yml
-          name: resume.pdf
-          path: resume.pdf
+#      - name: Download the generated PDF
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: resume.pdf
+#          path: resume.pdf
 
       - name: Start a web server
         run: |
