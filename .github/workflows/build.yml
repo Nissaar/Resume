@@ -35,19 +35,19 @@ jobs:
 
       - name: Start a web server
         run: |
-          npm install -g http-server
-          nohup http-server -p 8080 &
+          sudo npm install -g http-server
+          sudo nohup http-server -p 8080 &
 
       - name: Modify HTML to use the generated PDF
         run: |
           sed -i 's|https://resume.mgopee.tech/resume.pdf|resume.pdf|' index.html
 
       - name: Install dependencies
-        run: npm install puppeteer
+        run: sudo npm install puppeteer
 
       - name: Take screenshot
         run: |
-          node <<'EOF'
+          sudo node <<'EOF'
           const puppeteer = require('puppeteer');
           (async () => {
             const browser = await puppeteer.launch();
