@@ -16,25 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-          #- name: Set up LaTeX environment
-          #run: |
-          #sudo apt-get update
-          #sudo apt-get install -y texlive-full
-
-          # - name: Install simpleicons package
-          #   run: |
-          #     wget https://github.com/ineshbose/simple-icons-latex/releases/download/13.13.0/simpleicons.zip
-          #     sudo unzip simpleicons.zip -d /usr/local/texlive/2021/texmf-dist/tex/latex/simpleicons
-          #     #sudo cp simpleicons/simpleicons/tex/simpleicons.sty /usr/share/texlive/texmf-dist/tex/latex/simpleicons/
-          #     sudo texhash
-
       - name: LaTeX build
         uses: dante-ev/latex-action@latest
         with:
           root_file: resume.tex
 
       - name: Upload a Build artifact
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@latest
         with:
           name: resume.pdf
           path: resume.pdf
