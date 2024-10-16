@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo npm install puppeteer
-          sudo apt-get install -y google-chrome-stable
+          sudo npm puppeteer browsers install chrome
 
       - name: Take screenshot
         run: |
