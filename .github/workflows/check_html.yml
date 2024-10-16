@@ -31,7 +31,7 @@ jobs:
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
-          github-token: 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
+          workflow: build.yml
           name: resume.pdf
           path: resume.pdf
 
