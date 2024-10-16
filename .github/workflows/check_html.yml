@@ -1,0 +1,22 @@
+name: Check HTML Display
+
+on: [push, pull_request]
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: HTML Preview
+        uses: pavi2410/html-preview-action@v4
+        with:
+          html_file: 'index.html'
+          job_summary: true
+
+      - name: Check HTML file display
+        run: |
+          echo "HTML file preview available at ${{ steps.html_preview.outputs.url }}"
+
