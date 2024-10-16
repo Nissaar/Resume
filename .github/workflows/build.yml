@@ -55,6 +55,9 @@ jobs:
           name: screenshot
           path: screenshot.png
 
+      - name: ls
+        run: ls -lhrta
+
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
