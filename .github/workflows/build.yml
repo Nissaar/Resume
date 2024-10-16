@@ -42,27 +42,8 @@ jobs:
         run: |
           sed -i 's|https://resume.mgopee.tech/resume.pdf|resume.pdf|' index.html
 
-#      - name: Install dependencies
-#        run: |
-#          sudo npm install puppeteer
-#          sudo npm install @puppeteer/browsers
-#          sudo npx @puppeteer/browsers install chrome@stable
-
-#      - name: Take screenshot
-#        run: |
-#          node <<'EOF'
-#          const puppeteer = require('puppeteer');
-#          (async () => {
-#            const browser = await puppeteer.launch();
-#            const page = await browser.newPage();
-#            await page.goto('http://localhost:8080/index.html', {waitUntil: 'networkidle2'});
-#            await page.screenshot({ path: 'screenshot.png', fullPage: true });
-#            await browser.close();
-#          })();
-#          EOF
-
       - name: Screenshot
-        uses: ""lannonbr/puppeteer-screenshot-action@1.0.0""
+        uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
         with:
           url: http://localhost:8080/index.html
 
