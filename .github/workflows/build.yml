@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: screenshot
-          path: screenshot.png
+          path: ./screenshot.png
 
       - name: ls
         run: ls -lhrta
@@ -64,7 +64,7 @@ jobs:
           path: artifacts
 
       - name: ls
-        run: ls -lhrta
+        run: ls -lhrta artifacts
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v3
