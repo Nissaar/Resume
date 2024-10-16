@@ -69,5 +69,5 @@ jobs:
 
       - name: Comment on PR with screenshot
         run: |
-          gh pr comment ${{ github.event.pull_requests[0].number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
+          gh pr comment ${{ github.event..number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
 
