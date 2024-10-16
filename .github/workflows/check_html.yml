@@ -10,7 +10,6 @@ permissions:
   contents: write
   pull-requests: write
   actions: read
-  artifacts: read
 
 jobs:
   check-html:
