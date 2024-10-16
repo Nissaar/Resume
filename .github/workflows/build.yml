@@ -47,7 +47,7 @@ jobs:
 
       - name: Take screenshot
         run: |
-          sudo node <<'EOF'
+          node <<'EOF'
           const puppeteer = require('puppeteer');
           (async () => {
             const browser = await puppeteer.launch();
