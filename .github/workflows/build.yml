@@ -58,8 +58,8 @@ jobs:
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
-          name: screenshot.png
-          path: screenshot.png
+          name: screenshot.zip
+          path: screenshot.zip
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v3
