@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows: ["Build Resume on Push"]  # Name of your build workflow
     types:
-      - successful
       - completed
 
 permissions:
@@ -16,7 +15,7 @@ permissions:
 jobs:
   check-html:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'successful' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout repository
