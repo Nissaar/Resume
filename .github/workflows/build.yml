@@ -58,10 +58,10 @@ jobs:
       - name: ls
         run: |
          ls -lhrta
-         apt-get update
-         apt-get install mlocate -y
-         updatedb
-         locate screenshot.png
+         sudo apt-get update
+         sudo apt-get install mlocate -y
+         sudo updatedb
+         sudo locate screenshot.png
 
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
