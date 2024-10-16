@@ -58,7 +58,7 @@ jobs:
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
-          name: screenshot
+          name: screenshot.png
           path: screenshot.png
 
       - name: Comment PR
