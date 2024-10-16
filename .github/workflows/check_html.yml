@@ -20,18 +20,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: test
+        run: |
+          echo ${{ github.run_id }}
+          echo ${{ github.token }}
+          echo ${{ github.repository }}
+
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
           github-token: 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
           name: resume.pdf
           path: resume.pdf
-
-      - name: test
-        run: |
-          echo ${{ github.run_id }}
-          echo ${{ github.token }}
-          echo ${{ github.repository }}
 
       - name: Start a web server
         run: |
