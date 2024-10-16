@@ -26,7 +26,7 @@ jobs:
           name: resume.pdf
           path: resume.pdf
         env:
-          GITHUB_TOKEN: ${{ github.token }
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Start a web server
         run: |
