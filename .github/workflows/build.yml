@@ -76,14 +76,14 @@ jobs:
 #        with:
 #          file-path: /home/runner/work/_temp/screenshot.png
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
+#      - name: Install GitHub CLI
+#        run: sudo apt-get install gh
 
-      - name: Authenticate GitHub CLI
-        run: |
-          gh auth login --with-token <<< "${{ secrets.TOKEN }}"
+#      - name: Authenticate GitHub CLI
+#        run: |
+#          gh auth login --with-token <<< "${{ secrets.TOKEN }}"
 
-      - name: Comment on PR with screenshot
-        run: |
-          gh pr comment ${{ github.event.number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
+#      - name: Comment on PR with screenshot
+#        run: |
+#          gh pr comment ${{ github.event.number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
 
