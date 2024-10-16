@@ -49,25 +49,41 @@ jobs:
           destination: screenshot.png
           full-page: true
 
-      - name: Upload screenshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot
-          path: screenshot.png
+#      - name: Upload screenshot
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: screenshot
+#          path: screenshot.png
 
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v3
-        with:
-          file-path: screenshot.png
+#      - name: ls
+#        run: |
+#         ls -lhrta
+#         sudo apt-get update
+#         sudo apt-get install mlocate -y
+#         sudo updatedb
+#         sudo locate screenshot.png
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
+#      - name: Download the generated PDF
+#        uses: actions/download-artifact@v4
+#        with:
+#          path: artifacts
 
-      - name: Authenticate GitHub CLI
-        run: |
-          gh auth login --with-token <<< "${{ secrets.TOKEN }}"
+#      - name: ls
+#        run: ls -lhrta artifacts
 
-      - name: Comment on PR with screenshot
-        run: |
-          gh pr comment ${{ github.event.number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
+#      - name: Comment PR
+#        uses: thollander/actions-comment-pull-request@v3
+#        with:
+#          file-path: /home/runner/work/_temp/screenshot.png
+
+#      - name: Install GitHub CLI
+#        run: sudo apt-get install gh
+
+#      - name: Authenticate GitHub CLI
+#        run: |
+#          gh auth login --with-token <<< "${{ secrets.TOKEN }}"
+
+#      - name: Comment on PR with screenshot
+#        run: |
+#          gh pr comment ${{ github.event.number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
 
