@@ -59,14 +59,10 @@ jobs:
         run: sudo apt-get install gh
 
       - name: Authenticate GitHub CLI
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          gh auth login --with-token <<< "${{ github.token }}"
+          gh auth login --with-token <<< "${{ secrets.TOKEN }}"
 
       - name: Comment on PR with screenshot
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
         run: |
           gh pr comment ${{ github.event.pull_requests[0].number }} --body "### HTML Rendering Check\n![Screenshot](./screenshot.png)"
 
