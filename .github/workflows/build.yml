@@ -53,10 +53,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: screenshot
-          path: ./screenshot.png
+          path: screenshot.png
 
       - name: ls
-        run: ls -lhrta
+        run: |
+         ls -lhrta
+         apt-get update
+         apt-get install mlocate -y
+         updatedb
+         locate screenshot.png
 
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
