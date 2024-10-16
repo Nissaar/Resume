@@ -23,7 +23,7 @@ jobs:
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
         with:
-          github-token: ${{ github.token }}
+          github-token: REMOVED_TOKEN
           name: resume.pdf
           path: resume.pdf
 
