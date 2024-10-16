@@ -60,6 +60,8 @@ jobs:
 
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
+          with:
+            path: artifacts
 
       - name: ls
         run: ls -lhrta
