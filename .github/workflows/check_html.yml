@@ -22,8 +22,8 @@ jobs:
 
       - name: Download the generated PDF
         uses: actions/download-artifact@v4
-        github-token: ${{ github.token }}
         with:
+          github-token: ${{ github.token }}
           name: resume.pdf
           path: resume.pdf
 
