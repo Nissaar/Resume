@@ -55,6 +55,11 @@ jobs:
           name: screenshot
           path: screenshot.png
 
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          filepath: screenshot.png
+
       - name: Install GitHub CLI
         run: sudo apt-get install gh
 
