@@ -63,6 +63,12 @@
         .download-link a:hover {
             background: #450808;
         }
+        #error-message {
+            display: none;
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +77,31 @@
         <a href="https://resume.mgopee.tech/resume.pdf" download="Mushir_Resume.pdf">Download Resume</a>
     </div>
     <div class="container">
-        <iframe src="https://docs.google.com/viewer?url=https://resume.mgopee.tech/resume.pdf&embedded=true" width="100%" height="100%" style="border:none;" allow="fullscreen"></iframe>
+        <iframe id="pdf-viewer" src="https://docs.google.com/viewer?url=https://resume.mgopee.tech/resume.pdf&embedded=true" width="100%" height="100%" style="border:none;" allow="fullscreen"></iframe>
+        <div id="error-message">
+            Failed to load PDF. <a href="https://resume.mgopee.tech/resume.pdf" target="_blank">Download the PDF</a>
+        </div>
     </div>
+    <script>
+        const iframe = document.getElementById('pdf-viewer');
+        const maxRetries = 5;
+        let retryCount = 0;
+
+        function checkAndReloadIframe() {
+            if (!iframe.contentWindow.document.body.innerHTML.includes('pdf') && retryCount < maxRetries) {
+                retryCount++;
+                console.log(`Retrying to load PDF... Attempt ${retryCount}`);
+                iframe.src = iframe.src; // Reload iframe
+            } else if (retryCount >= maxRetries) {
+                document.getElementById('error-message').style.display = 'block';
+                iframe.style.display = 'none';
+            } else {
+                console.log('PDF loaded successfully');
+            }
+        }
+
+        iframe.addEventListener('load', checkAndReloadIframe);
+    </script>
 </body>
 </html>
+
