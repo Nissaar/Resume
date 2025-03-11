@@ -42,12 +42,17 @@ jobs:
         run: |
           sed -i 's|https://resume.mgopee.tech/resume.pdf|resume.pdf|' index.html
 
-      - name: Screenshot
-        uses: "swinton/screenshot-website@v1.x"
-        with:
-          source: http://localhost:8080/index.html
-          destination: screenshot.png
-          full-page: true
+#     - name: Screenshot
+#        uses: "swinton/screenshot-website@v1.x"
+#        with:
+#          source: http://localhost:8080/index.html
+#          destination: screenshot.png
+#          full-page: true
+#      - name: screenshots-ci-action
+#        uses: flameddd/screenshots-ci-action@v2.1.0
+#        with:
+#          url: http://localhost:8080/index.html
+        
 
 #      - name: Upload screenshot
 #        uses: actions/upload-artifact@v4
