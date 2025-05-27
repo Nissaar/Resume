@@ -1,50 +1,23 @@
-%%%%%%%%%%%%%%%%%
-% This is an sample CV template created using altacv.cls
-% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
-%
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2003/12/01 or later.
-%%%%%%%%%%%%%%%%
-
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
-% \documentclass[10pt,a4paper,normalphoto]{altacv}
-
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-%% AltaCV uses the fontawesome5 and simpleicons packages.
-%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
-% Change the page layout if you need to
+
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=0.5cm,columnsep=1.2cm}
 
-% The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{enumitem}
 
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-% WHEN COMPILING WITH XELATEX PLEASE USE
-% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
 \ifxetexorluatex
-  % If using xelatex or lualatex:
   \setmainfont{Roboto Slab}
   \setsansfont{Lato}
   \renewcommand{\familydefault}{\sfdefault}
 \else
-  % If using pdflatex:
   \usepackage[rm]{roboto}
   \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
   \renewcommand{\familydefault}{\sfdefault}
 \fi
 
-% Change the colours if you want to
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
 \definecolor{DarkPastelRed}{HTML}{450808}
@@ -59,160 +32,117 @@
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
-% Change some fonts, if necessary
 \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
 \renewcommand{\personalinfofont}{\footnotesize}
 \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
 
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
 \renewcommand{\cvItemMarker}{{\small\textbullet}}
 \renewcommand{\cvRatingMarker}{\faCircle}
-% ...and the markers for the date/location for \cvevent
-% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
-% \renewcommand{\cvLocationMarker}{\faMapMarker*}
-
-
-% If your CV/résumé is in a language other than English,
-% then you probably want to change these so that when you
-% copy-paste from the PDF or run pdftotext, the location
-% and date marker icons for \cvevent will paste as correct
-% translations. For example Spanish:
-% \renewcommand{\locationname}{Ubicación}
-% \renewcommand{\datename}{Fecha}
-
-
-%% Use (and optionally edit if necessary) this .tex if you
-%% want to use an author-year reference style like APA(6)
-%% for your publication list
-% \input{pubs-authoryear.tex}
-
-%% Use (and optionally edit if necessary) this .tex if you
-%% want an originally numerical reference style like IEEE
-%% for your publication list
 \input{pubs-num.tex}
 
-%% sample.bib contains your publications
 \addbibresource{sample.bib}
 
 \begin{document}
 \name{Muhammad Nissaar Mushir Gopee}
 \tagline{DevOps Engineer/SysAdmin}
-%% You can add multiple photos on the left or right
-%\photoR{2.8cm}{Globe_High}
-% \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
 \personalinfo{%
-  % Not all of these are required!
   \email{nisgopee@proton.me}
   \phone{+23052597140}
   \mailaddress{Vallee des Pretres, Port Louis}
   \location{Mauritius}
   \homepage{blog.nissaar.com}
-  % \twitter{@twitterhandle}
-  %\credly{https://www.credly.com/users/muhammad-nissaar-mushir-gopee.cb59e2f6}
   \linkedin{muhammad-nissaar-mushir-gopee}
   \github{Nissaar}
   \printinfo{}{Credly}[https://www.credly.com/users/muhammad-nissaar-mushir-gopee.cb59e2f6]
-  %\orcid{0000-0000-0000-0000}
-  %% You can add your own arbitrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
-
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
-  %%
-  %% For services and platforms like Mastodon where there isn't a
-  %% straightforward relation between the user ID/nickname and the hyperlink,
-  %% you can use \printinfo directly e.g.
-  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
-  %% But if you absolutely want to create new dedicated info fields for
-  %% such platforms, then use \NewInfoField* with a star:
-  % \NewInfoField*{mastodon}{\faMastodon}
-  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
-  %% the full hyperlink.
-  % \mastodon{@username@instance}{https://instance.url/@username}
 }
 
 \makecvheader
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
 
-%% Set the left/right column width ratio to 6:4.
 \columnratio{0.6}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
 \begin{paracol}{2}
 
-%\cvsection{About}
-%I am a dedicated and passionate IT professional with a strong background in DevOps, Linux system administration, and cloud technologies. With a proven track record of resolving complex technical issues, implementing efficient solutions, and optimizing system performance, I thrive in dynamic and challenging environments. My experience spans across various roles where I have demonstrated my ability to collaborate effectively with cross-functional teams, automate processes, and ensure the seamless operation of critical infrastructure. I am a fast learner, problem solver, and critical thinker who is always eager to contribute to innovative projects and support my colleagues. My commitment to continuous learning and professional development drives me to stay updated with the latest industry trends and technologies.
 
 \cvsection{Experience}
 
 \cvevent{DevOps Engineer}{SQLI UK \& ME}{02/2023 -- Ongoing}{}
 \begin{itemize}
-\item Resolve technical issues through research and troubleshooting
-\item Support projects implementation 
-\item Provide resolutions with respect to SLAs
-\item Infrastructure management and monitoring
-\item Incident, change and problem Management
-\item Handle releases
-\item Collaborate with Development and Support teams
-\item Automate processes and CI/CD
+\item Manage infrastructure and troubleshoot incidents across Cloud (AWS, Platform.sh) environments, ensuring SLA compliance
+\item Managed and automated networking configurations across AWS environments, including SSL certs, Load Balancers (ALB, NLB, ELB), VPN tunnels (Site-to-Site), Network Security (Security Groups, Web ACL) and diagnostic settings.
+\item Drive CI/CD pipeline improvements and release automation using tools like Git, Ansible, and Terraform
+\item Collaborate with Dev and Support teams for smooth service delivery and project rollouts
+\item Maintain internal runbooks, KBs, and bilingual (EN/FR) documentation for ops standardization
+\item Support change and incident management, contributing to continuous service improvement (CSI) efforts
 \end{itemize}
 
 \divider
 
 \cvevent{Linux System Engineer}{OceanDBA}{07/2022 -- 01/2023}{}
 \begin{itemize}
-\item Installation, configuration and Maintenance of Servers
-\item Perform daily health checks on system components
-\item DBA tasks: database setup, replication, troubleshooting, downtime management
-\item Bash scripting for monitoring
-\item Documentation
-\item Change Management, Incident and Problem management
-\item Backup Configuration using minio and bash
-\item Collaborate with automation team to reduce repetitive manual tasks
+\item Deployed and maintained Linux servers with HA DB setups and automated backups (MinIO, Bash)
+
+\item Automated on-prem networking (Proxmox): VPNs, firewalls, load balancers (HAProxy, ProxySQL)
+
+\item Handled incidents, changes, and database ops (setup, replication, troubleshooting)
+
+\item Collaborated on monitoring automation and documented processes (EN/FR) in KBs and runbooks
+
 \end{itemize}
 
 \divider
 
 \cvevent{Linux System Administrator}{Linkbynet}{12/2019 -- 05/2022}{}
 \begin{itemize}
-\item Supported pre-sales Process with different stakeholders
-\item Managed incidents and problems: conducted complex analysis, proposed technical solutions, and ensured resolution
-\item Provided technical support and training to Junior and System Administrators
-\item Monitored and managed client systems and infrastructure for optimal health and performance
-\item Handled change management for complex and critical client requests
-\item Optimized and standardized operational processes
-\item Wrote wiki documentation in French and English for technicalprocesses.
-\item Maintained flexible schedule, responded to after-hours and weekend emergencies
+\item Resolved critical incidents and implemented resilient infrastructure solutions across hybrid cloud setups
+\item Managed and automated network configs: VPNs, SSL certs, HA/load balancers (HAProxy, Azure/GCP/AWS), diagnostics
+\item Collaborated on presales activities and technical solution design with stakeholders
+\item Authored bilingual (EN/FR) documentation, runbooks, and contributed to internal knowledge base
+\item Delivered 24/7 support and mentored junior staff in incident response and system operations
 \end{itemize}
 
 \switchcolumn
 
-\cvsection{Education}
+\cvsection{Technical Skills}
 
-\cvevent{BCS Level 6 Professional Graduate Diploma in IT (+ Level 5 - Diploma, Level 4 - Certificate)}{British Computer Society}{03/2019 -- 09/2023}{}
-\begin{itemize}[label=\textcolor{DarkPastelRed}{$\triangleright$}]
-\item Management Information Systems
-\item Web engineering
-\item Network Information Systems
-\item Software Engineering 2
-\item Professional Issues in IS Practice
-\item Systems Analysis and Design
-\item IT Project Management
-\item Principles of Internet Technologies
-\item Management Information Systems
-\item Computer Network Technology
-\item Informations systems
-\item Software development
+\begin{itemize}[left=0pt]
+    \item \textbf{\textcolor{PastelRed}{Linux Technologies}}: Redhat, CentOS, Debian, Ubuntu, Oracle Linux
+    \item \textbf{\textcolor{PastelRed}{Web Technologies}}: Apache, Nginx, Varnish, Tomcat, PHP-FPM, HAProxy
+    \item \textbf{\textcolor{PastelRed}{Database}}: MySQL, MariaDB, PostgreSQL
+    \item \textbf{\textcolor{PastelRed}{File Transfer Application}}: FTP, PROFTPD, SFTP, rsync
+    \item \textbf{\textcolor{PastelRed}{Scripting}}: Bash, Python
+    \item \textbf{\textcolor{PastelRed}{Automation tools}}: Terraform, Git, Ansible, Packer
+    \item \textbf{\textcolor{PastelRed}{Containerization}}: Docker, Docker-compose, Kubernetes
+    \item \textbf{\textcolor{PastelRed}{Cloud Technologies}}: AWS, Azure, GCP, Aliyun, Platform.sh, Oracle Cloud (Personal experience), Linode (Personal Experience)
+    \item \textbf{\textcolor{PastelRed}{CDN/Caching}}: Cloudflare, Fastly, Cloudfront
+    \item \textbf{\textcolor{PastelRed}{Monitoring}}: Zabbix, Site24x7, Datadog, Icinga (Nagios based), New relic, Grafana, Pingdom, Cloudwatch
+    \item \textbf{\textcolor{PastelRed}{CMS}}: Wordpress, Drupal, Jahia, EzPublish, Magento
+    \item \textbf{\textcolor{PastelRed}{Virtualization}}: VMWare, Proxmox
+    \item \textbf{\textcolor{PastelRed}{Configuration Management}}: Chef administration, Salt
+    \item \textbf{\textcolor{PastelRed}{Networking}}: IP Configuration, Routing, SSL/TLS, VPN, Load Balancers, Subnets, VPC, ACL, WAF
+    \item \textbf{\textcolor{PastelRed}{OS Hardening}}: SELinux, AppArmor, Firewall, IPtables
+    \item \textbf{\textcolor{PastelRed}{Load balancing}}: Azure Load Balancer, AWS Load Balancer (ALB, ELB), ProxySQL
+    \item \textbf{\textcolor{PastelRed}{Web Programming}}: HTML, CSS, JavaScript, PHP
+    \item \textbf{\textcolor{PastelRed}{Mail}}: Postfix
+    \item \textbf{\textcolor{PastelRed}{Elasticsearch}} (Administration)
+    \item \textbf{\textcolor{PastelRed}{Storage}}: S3: AWS, Self-hosted Minio
 \end{itemize}
+
+\cvsection{Key Skills}
+
+\begin{multicols}{2}
+\begin{itemize}[label=\textcolor{DarkPastelRed}{$\triangleright$}]
+\item Googling
+\item Self and quick learner
+%\item Problem solving
+\item Critical thinker
+\item Team player 
+\end{itemize}
+\end{multicols}
+
+\newpage
 
 \cvsection{Certification}
 
@@ -244,78 +174,28 @@
 
 \printinfo{}{Link to certificate}[https://www.credly.com/badges/4d8f9a96-b840-416d-931d-3f9f62cb0d41/public_url]
 
-\newpage
-
-\cvsection{Key Skills}
-
-
-\begin{multicols}{2}
-\begin{itemize}[label=\textcolor{DarkPastelRed}{$\triangleright$}]
-\item Googling
-\item Self and quick learner
-%\item Problem solving
-\item Critical thinker
-\item Team player 
-\end{itemize}
-\end{multicols}
-
-
-%{\LaTeXraggedright
-%\cvtag{Googling}
-%\cvtag{Self and quick learner}
-%\cvtag{Problem Solving}
-%\cvtag{Team Player}
-%\cvtag{Critical Thinker}
-%\par}
-
-\cvsection{Project}
-
-\cvevent{tldr}{https://github.com/tldr-pages/tldr}{}{}
-\begin{itemize}
-\item Contributed to project on github ny adding commands examples
-\end{itemize}
-
 \divider
 
 \switchcolumn
 
 \newpage
 
-\cvsection{Technical Skills}
+\cvsection{Education}
 
-\begin{itemize}[left=0pt]
-    \item \textbf{\textcolor{PastelRed}{Linux Technologies}}: Redhat, CentOS, Debian, Ubuntu, Oracle Linux
-    \item \textbf{\textcolor{PastelRed}{Web Technologies}}: Apache, Nginx, Varnish, Tomcat, PHP-FPM, HAProxy
-    \item \textbf{\textcolor{PastelRed}{Database}}: MySQL, MariaDB, PostgreSQL
-    \item \textbf{\textcolor{PastelRed}{File Transfer Application}}: FTP, PROFTPD, SFTP, rsync
-    \item \textbf{\textcolor{PastelRed}{Scripting}}: Bash, Python (Basic)
-    \item \textbf{\textcolor{PastelRed}{Automation tools}}: Terraform, Git, Ansible, Packer
-    \item \textbf{\textcolor{PastelRed}{Containerization}}: Docker, Docker-compose, Kubernetes (Learning in progress)
-    \item \textbf{\textcolor{PastelRed}{Cloud Technologies}}: AWS, Azure, GCP, Aliyun, Platform.sh, Oracle Cloud (Personal experience), Linode (Personal Experience)
-    \item \textbf{\textcolor{PastelRed}{CDN/Caching}}: Cloudflare, Fastly, Cloudfront
-    \item \textbf{\textcolor{PastelRed}{Monitoring}}: Zabbix, Site24x7, Datadog, Icinga (Nagios based), New relic, Grafana, Pingdom, Cloudwatch
-    \item \textbf{\textcolor{PastelRed}{CMS}}: Wordpress, Drupal, Jahia, EzPublish, Magento
-    \item \textbf{\textcolor{PastelRed}{Virtualization}}: VMWare, Proxmox
-    \item \textbf{\textcolor{PastelRed}{Configuration Management}}: Chef administration, Salt
-    \item \textbf{\textcolor{PastelRed}{DNS Administration \& Management}}: 
-    \item \textbf{\textcolor{PastelRed}{Networking}}: IP Configuration, Routing
-    \item \textbf{\textcolor{PastelRed}{OS Hardening}}: SELinux, AppArmor, Firewall, IPtables
-    \item \textbf{\textcolor{PastelRed}{Load balancing}}: Azure Load Balancer, AWS Load Balancer (ALB, ELB), ProxySQL
-    \item \textbf{\textcolor{PastelRed}{Web Programming}}: HTML, CSS, JavaScript, PHP
-    \item \textbf{\textcolor{PastelRed}{Mail}}: Postfix
-    \item \textbf{\textcolor{PastelRed}{SSL}}
-    \item \textbf{\textcolor{PastelRed}{Elasticsearch}} (Administration)
-    \item \textbf{\textcolor{PastelRed}{Storage}}: S3: AWS, Self-hosted Minio
-\end{itemize}
-
-\switchcolumn
-
-\cvsection{AWARDS}
-
-\begin{itemize}[left=0pt]
-    \item \textbf{\textcolor{DarkPastelRed}{Google Code-in Finalist}}: To 10 in Ubuntu Category - 2018
-    \item \textbf{\textcolor{DarkPastelRed}{Duke of Edinburgh Award}}: Bronze and Silver Standard
-    \item \textbf{\textcolor{DarkPastelRed}{Top 200 Innovators}}: Robotics Competition
+\cvevent{BCS Level 6 Professional Graduate Diploma in IT (+ Level 5 - Diploma, Level 4 - Certificate)}{British Computer Society}{03/2019 -- 09/2023}{}
+\begin{itemize}[label=\textcolor{DarkPastelRed}{$\triangleright$}]
+\item Management Information Systems
+\item Web engineering
+\item Network Information Systems
+\item Software Engineering 2
+\item Professional Issues in IS Practice
+\item Systems Analysis and Design
+\item IT Project Management
+\item Principles of Internet Technologies
+\item Management Information Systems
+\item Computer Network Technology
+\item Informations systems
+\item Software development
 \end{itemize}
 
 \cvsection{Hobbies}
@@ -331,146 +211,4 @@
 \end{multicols}
 
 \end{paracol}
-\end{document}
-
-\cvsection{Badges}
-\includegraphics[width=0.25\textwidth]{cloud-digital-leader-certification.png}
-\includegraphics[width=0.25\textwidth]{professional-cloud-architect-certification.png}
-
-
-\cvsection{Projects}
-
-\cvevent{Project 1}{Funding agency/institution}{}{}
-\begin{itemize}
-\item Details
-\end{itemize}
-
-\divider
-
-\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
-A short abstract would also work.
-
-\medskip
-
-\cvsection{A Day of My Life}
-
-% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% \wheelchart{outer radius}{inner radius}{
-% comma-separated list of value/text width/color/detail}
-\wheelchart{1.5cm}{0.5cm}{%
-  6/8em/accent!30/{Sleep,\\beautiful sleep},
-  3/8em/accent!40/Hopeful novelist by night,
-  8/8em/accent!60/Daytime job,
-  2/10em/accent/Sports and relaxation,
-  5/6em/accent!20/Spending time with family
-}
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-\newpage
-
-\cvsection{Publications}
-
-%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
-%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
-%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
-\mynames{Lim/Lian\bibnamedelima Tze,
-  Wong/Lian\bibnamedelima Tze,
-  Lim/Tracy,
-  Lim/L.\bibnamedelimi T.}
-%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
-
-\nocite{*}
-
-\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
-
-\newpage
-
-\cvsection{My Life Philosophy}
-
-\begin{quote}
-``Something smart or heartfelt, preferably in one sentence.''
-\end{quote}
-
-\cvsection{Most Proud of}
-
-\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
-
-\divider
-
-\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
-
-\divider
-
-\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
-
-\cvsection{Strengths}
-
-\cvtag{Hard-working}
-\cvtag{Eye for detail}\\
-\cvtag{Motivator \& Leader}
-
-\divider\smallskip
-
-\cvtag{C++}
-\cvtag{Embedded Systems}\\
-\cvtag{Statistical Analysis}
-
-\cvsection{Languages}
-
-\cvskill{English}{5}
-\divider
-
-\cvskill{Spanish}{4}
-\divider
-
-\cvskill{German}{3.5} %% Supports X.5 values.
-
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vspace etc to make adjustments.
-\medskip
-
-\cvsection{Education}
-
-\cvevent{Ph.D.\ in Your Discipline}{Your University}{Sept 2002 -- June 2006}{}
-Thesis title: Wonderful Research
-
-\divider
-
-\cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
-
-\divider
-
-\cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
-
-% \divider
-
-\cvsection{Referees}
-
-% \cvref{name}{email}{mailing address}
-\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-{Address Line 1\\Address line 2}
-
-\divider
-
-\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-{Address Line 1\\Address line 2}
-
-
-\end{paracol}
-
-
 \end{document}
