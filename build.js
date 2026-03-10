@@ -157,11 +157,11 @@ function buildHtml() {
 
   --page-width:   210mm;
   --page-min-height: 297mm;
-  --margin-top:    1.5cm;
-  --margin-bottom: 0.5cm;
-  --margin-left:   1.25cm;
-  --margin-right:  1.25cm;
-  --col-gap:       1.2cm;
+  --margin-top:    0.5cm;
+  --margin-bottom: 0.3cm;
+  --margin-left:   0.8cm;
+  --margin-right:  0.8cm;
+  --col-gap:       0.6cm;
 }
 
 @page {
@@ -170,13 +170,13 @@ function buildHtml() {
 }
 
 html {
-  font-size: 10pt;
+  font-size: 7.5pt;
 }
 
 body {
   font-family: var(--font-sans);
   color: var(--color-body);
-  line-height: 1.35;
+  line-height: 1.2;
   background: #f0f0f0;
 }
 
@@ -194,82 +194,98 @@ a:hover { text-decoration: underline; }
 }
 
 /* --- Header ---------------------------------------------------------- */
-.header { margin-bottom: 0.6em; }
+.header { margin-bottom: 0.15em; }
 .header-name {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 2.05em;
+  font-size: 1.8em;
   color: var(--color-name);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 .header-tagline {
-  font-size: 1.15em;
+  font-size: 1em;
   font-weight: 700;
   color: var(--color-tagline);
-  margin-top: 0.25em;
+  margin-top: 0.1em;
 }
 .header-contact {
-  font-size: 0.78em;
-  margin-top: 0.5em;
+  font-size: 0.85em;
+  margin-top: 0.2em;
   color: var(--color-body);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15em 1.4em;
+  gap: 0.05em 1em;
 }
-.header-contact i { color: var(--color-accent); margin-right: 0.2em; }
+.header-contact i { color: var(--color-accent); margin-right: 0.15em; }
 .header-contact a { color: var(--color-body); }
+
+/* --- Key skills (inline below header) -------------------------------- */
+.header-keyskills {
+  margin-top: 0.15em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.05em 1em;
+  font-size: 0.85em;
+}
+.header-keyskills li {
+  list-style: none;
+}
+.header-keyskills li::before {
+  content: '▸';
+  color: var(--color-heading);
+  margin-right: 0.3em;
+}
 
 /* --- Two-column layout ----------------------------------------------- */
 .columns {
   display: grid;
-  grid-template-columns: 60fr 40fr;
+  grid-template-columns: 55fr 45fr;
   gap: 0 var(--col-gap);
 }
 
 /* --- Section --------------------------------------------------------- */
 .cv-section {
-  margin-top: 0.55em;
-  break-inside: avoid;
+  margin-top: 0.2em;
 }
 .cv-section-title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.35em;
+  font-size: 1.15em;
   color: var(--color-heading);
   text-transform: uppercase;
   border-bottom: 2pt solid var(--color-headingrule);
-  padding-bottom: 0.15em;
-  margin-bottom: 0.45em;
+  padding-bottom: 0.05em;
+  margin-bottom: 0.15em;
 }
 
 /* --- Event (experience / cert / education) --------------------------- */
-.cv-event { margin-bottom: 0.35em; }
+.cv-event { margin-bottom: 0.1em; }
 .cv-event-title {
-  font-size: 1.08em;
+  font-size: 1em;
   font-weight: 400;
   color: var(--color-emphasis);
 }
 .cv-event-subtitle {
   font-weight: 700;
   color: var(--color-accent);
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 .cv-event-date {
-  font-size: 0.82em;
+  font-size: 0.8em;
   color: var(--color-body);
-  margin-bottom: 0.2em;
+  margin-bottom: 0.05em;
 }
-.cv-event-date i { margin-right: 0.25em; }
+.cv-event-date i { margin-right: 0.2em; }
 
 .cv-event ul {
-  margin: 0.15em 0 0.1em 1.35em;
+  margin: 0.05em 0 0.02em 1.1em;
   padding: 0;
-  font-size: 0.92em;
+  font-size: 0.9em;
   color: var(--color-body);
 }
 .cv-event ul li {
-  margin-bottom: 0.15em;
+  margin-bottom: 0.02em;
 }
 .cert-link {
   font-size: 0.85em;
@@ -280,7 +296,7 @@ a:hover { text-decoration: underline; }
 .divider {
   border: none;
   border-top: 0.6pt dashed var(--color-divider);
-  margin: 0.45em 0;
+  margin: 0.15em 0;
 }
 
 /* --- Technical skills ------------------------------------------------ */
@@ -288,10 +304,10 @@ a:hover { text-decoration: underline; }
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.88em;
+  font-size: 0.85em;
 }
 .tech-skills li {
-  margin-bottom: 0.18em;
+  margin-bottom: 0.03em;
 }
 .skill-category {
   font-weight: 700;
@@ -304,8 +320,8 @@ a:hover { text-decoration: underline; }
   padding: 0;
   margin: 0;
   columns: 2;
-  column-gap: 1em;
-  font-size: 0.92em;
+  column-gap: 0.8em;
+  font-size: 0.88em;
 }
 .key-skills li::before {
   content: '▸';
@@ -314,26 +330,26 @@ a:hover { text-decoration: underline; }
 }
 .key-skills li {
   break-inside: avoid;
-  margin-bottom: 0.15em;
+  margin-bottom: 0.05em;
 }
 
 /* --- Education modules ----------------------------------------------- */
 .edu-modules {
   list-style: none;
   padding: 0;
-  margin: 0.15em 0 0 0;
-  font-size: 0.92em;
+  margin: 0.05em 0 0 0;
+  font-size: 0.88em;
 }
 .edu-modules li::before {
   content: '▸';
   color: var(--color-heading);
   margin-right: 0.4em;
 }
-.edu-modules li { margin-bottom: 0.12em; }
+.edu-modules li { margin-bottom: 0.05em; }
 
 /* --- Print / PDF ----------------------------------------------------- */
 @media print {
-  html { font-size: 10pt; }
+  html { font-size: 7.5pt; }
   body { background: #fff; }
   .page {
     box-shadow: none;
@@ -347,14 +363,17 @@ a:hover { text-decoration: underline; }
 </head>
 <body>
 
-<!-- ============ PAGE 1 ============ -->
-<div class="page">
+<div class="page" id="resume-page">
   <div class="header">
     <div class="header-name">${escapeHtml(data.name)}</div>
     <div class="header-tagline">${escapeHtml(data.tagline)}</div>
     <div class="header-contact">
       ${renderContactInfo(data.contact)}
     </div>
+    <div class="cv-section-title">Key Skills</div>
+    <ul class="header-keyskills">
+      ${data.keySkills.map((s) => `<li>${escapeHtml(s)}</li>`).join("\n      ")}
+    </ul>
   </div>
 
   <div class="columns">
@@ -364,36 +383,20 @@ a:hover { text-decoration: underline; }
         <div class="cv-section-title">Experience</div>
         ${renderExperience(data.experience)}
       </div>
-    </div>
 
-    <!-- Right column -->
-    <div class="col-right">
       <div class="cv-section">
         <div class="cv-section-title">Technical Skills</div>
         ${renderTechnicalSkills(data.technicalSkills)}
       </div>
-
-      <div class="cv-section">
-        <div class="cv-section-title">Key Skills</div>
-        ${renderKeySkills(data.keySkills)}
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ PAGE 2 ============ -->
-<div class="page">
-  <div class="columns">
-    <!-- Left column -->
-    <div class="col-left">
-      <div class="cv-section">
-        <div class="cv-section-title">Certification</div>
-        ${renderCertifications(data.certifications)}
-      </div>
     </div>
 
     <!-- Right column -->
     <div class="col-right">
+      <div class="cv-section">
+        <div class="cv-section-title">Certification</div>
+        ${renderCertifications(data.certifications)}
+      </div>
+
       <div class="cv-section">
         <div class="cv-section-title">Education</div>
         ${renderEducation(data.education)}
@@ -523,6 +526,47 @@ async function main() {
     await page.goto("file://" + tempHtml.replace(/\\/g, "/"), {
       waitUntil: "networkidle0",
     });
+
+    // Adaptive font sizing: binary-search for the largest font size
+    // that keeps content within one A4 page (297mm tall).
+    const A4_HEIGHT_PX = 297 * (96 / 25.4); // ~1122.5px
+    let lo = 6, hi = 14;
+    while (hi - lo > 0.1) {
+      const mid = (lo + hi) / 2;
+      await page.evaluate((sz) => {
+        document.documentElement.style.fontSize = sz + "pt";
+      }, mid);
+      // Remove min-height so scrollHeight reflects actual content
+      const contentHeight = await page.evaluate(() => {
+        const el = document.getElementById("resume-page");
+        const orig = el.style.minHeight;
+        el.style.minHeight = "0";
+        const h = el.scrollHeight;
+        el.style.minHeight = orig;
+        return h;
+      });
+      if (contentHeight <= A4_HEIGHT_PX) {
+        lo = mid;
+      } else {
+        hi = mid;
+      }
+    }
+    // Apply the largest fitting size
+    await page.evaluate((sz) => {
+      document.documentElement.style.fontSize = sz + "pt";
+    }, lo);
+    console.log(`   Font size adapted to ${lo.toFixed(1)}pt`);
+
+    // Also update the HTML file with the chosen font size
+    if (!pdfOnly) {
+      const adaptedHtml = html
+        .replace(/html\s*\{\s*font-size:\s*[\d.]+pt;/, `html { font-size: ${lo.toFixed(1)}pt;`)
+        .replace(/@media print\s*\{[^}]*font-size:\s*[\d.]+pt;/, (m) =>
+          m.replace(/font-size:\s*[\d.]+pt;/, `font-size: ${lo.toFixed(1)}pt;`)
+        );
+      fs.writeFileSync(htmlPath, adaptedHtml, "utf-8");
+    }
+
     await page.pdf({
       path: path.join(outDir, "resume.pdf"),
       format: "A4",

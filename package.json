@@ -1,7 +1,7 @@
 {
     "name": "json-resume",
     "version": "1.0.0",
-    "description": "Data-driven resume generator — edit resume.json, build to HTML and PDF",
+    "description": "Data-driven resume generator",
     "scripts": {
         "build": "node build.js",
         "build:html": "node build.js --html-only",
