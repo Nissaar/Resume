@@ -1,0 +1,14 @@
+{
+    "name": "json-resume",
+    "version": "1.0.0",
+    "description": "Data-driven resume generator — edit resume.json, build to HTML and PDF",
+    "scripts": {
+        "build": "node build.js",
+        "build:html": "node build.js --html-only",
+        "build:pdf": "node build.js --pdf-only",
+        "build:pages": "node build.js --pages"
+    },
+    "dependencies": {
+        "puppeteer": "^23.0.0"
+    }
+}
