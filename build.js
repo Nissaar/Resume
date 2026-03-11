@@ -246,7 +246,7 @@ a:hover { text-decoration: underline; }
 
 /* --- Section --------------------------------------------------------- */
 .cv-section {
-  margin-top: 0.2em;
+  margin-top: 0.4em;
 }
 .cv-section-title {
   font-family: var(--font-serif);
@@ -305,9 +305,12 @@ a:hover { text-decoration: underline; }
   padding: 0;
   margin: 0;
   font-size: 0.85em;
+  columns: 2;
+  column-gap: var(--col-gap);
 }
 .tech-skills li {
   margin-bottom: 0.03em;
+  break-inside: avoid;
 }
 .skill-category {
   font-weight: 700;
@@ -383,11 +386,6 @@ a:hover { text-decoration: underline; }
         <div class="cv-section-title">Experience</div>
         ${renderExperience(data.experience)}
       </div>
-
-      <div class="cv-section">
-        <div class="cv-section-title">Technical Skills</div>
-        ${renderTechnicalSkills(data.technicalSkills)}
-      </div>
     </div>
 
     <!-- Right column -->
@@ -407,6 +405,11 @@ a:hover { text-decoration: underline; }
         ${renderHobbies(data.hobbies)}
       </div>
     </div>
+  </div>
+
+  <div class="cv-section">
+    <div class="cv-section-title">Technical Skills</div>
+    ${renderTechnicalSkills(data.technicalSkills)}
   </div>
 </div>
 
