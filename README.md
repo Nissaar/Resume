@@ -9,13 +9,10 @@ A data-driven resume system. Edit **only** `resume.json` to update your content 
 ## Quick Start
 
 ```bash
-# 1. Enter the json-resume directory
-cd json-resume
-
-# 2. Install dependencies (one time)
+# 1. Install dependencies (one time)
 npm install
 
-# 3. Build both HTML and PDF
+# 2. Build both HTML and PDF
 npm run build
 ```
 
@@ -25,11 +22,14 @@ Output files appear in `output/`:
 
 ## Build Commands
 
-| Command              | Output            |
-|----------------------|-------------------|
-| `npm run build`      | HTML + PDF        |
-| `npm run build:html` | HTML only         |
-| `npm run build:pdf`  | PDF only          |
+| Command               | Output                    |
+|-----------------------|---------------------------|
+| `npm run build`       | HTML + PDF                |
+| `npm run build:html`  | HTML only                 |
+| `npm run build:pdf`   | PDF only                  |
+| `npm run build:pages` | HTML + PDF + Pages index  |
+
+> **Note:** `build:pages` produces three files (`resume.html`, `resume.pdf`, `index.html`) that must all be served from the same directory. Serving `index.html` alone will result in a broken page.
 
 ## Editing Your Resume
 
@@ -40,6 +40,7 @@ Open `resume.json` in any editor. The file is self-explanatory — every section
 | `name`             | Header name          |
 | `tagline`          | Header tagline       |
 | `contact`          | Contact info row     |
+| `layout`           | Column ratio and section placement |
 | `experience[]`     | Experience section   |
 | `technicalSkills[]`| Technical Skills     |
 | `keySkills[]`      | Key Skills           |

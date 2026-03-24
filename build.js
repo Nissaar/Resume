@@ -34,7 +34,7 @@ function renderContactInfo(c) {
     );
   if (c.address)
     items.push(
-      `<span class="info-item"><i class="fa-solid fa-envelope"></i> ${escapeHtml(c.address)}</span>`
+      `<span class="info-item"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(c.address)}</span>`
     );
   if (c.location)
     items.push(
@@ -121,9 +121,52 @@ function renderHobbies(hobbies) {
 }
 
 // ---------------------------------------------------------------------------
+// Layout helpers
+// ---------------------------------------------------------------------------
+const SECTION_TITLES = {
+  experience:      "Experience",
+  technicalSkills: "Technical Skills",
+  keySkills:       "Key Skills",
+  certifications:  "Certification",
+  education:       "Education",
+  hobbies:         "Hobbies",
+};
+
+const SECTION_RENDERERS = {
+  experience:      () => renderExperience(data.experience),
+  technicalSkills: () => renderTechnicalSkills(data.technicalSkills),
+  keySkills:       () => renderKeySkills(data.keySkills),
+  certifications:  () => renderCertifications(data.certifications),
+  education:       () => renderEducation(data.education),
+  hobbies:         () => renderHobbies(data.hobbies),
+};
+
+function renderSectionByName(name) {
+  const title    = SECTION_TITLES[name]    || name;
+  const renderer = SECTION_RENDERERS[name] || (() => "");
+  return `
+      <div class="cv-section">
+        <div class="cv-section-title">${title}</div>
+        ${renderer()}
+      </div>`;
+}
+
+// ---------------------------------------------------------------------------
 // Build full HTML
 // ---------------------------------------------------------------------------
 function buildHtml() {
+  const layout = data.layout || {};
+  const ratio  = typeof layout.leftColumnRatio === "number"
+    ? Math.max(0.1, Math.min(0.9, layout.leftColumnRatio))
+    : 0.6;
+  const leftFr  = Math.round(ratio * 100);
+  const rightFr = 100 - leftFr;
+
+  const leftSections             = layout.leftSections             || ["experience"];
+  const rightSections            = layout.rightSections            || ["technicalSkills", "keySkills"];
+  const fullWidthSectionsPage2Left  = layout.fullWidthSectionsPage2Left  || ["certifications"];
+  const fullWidthSectionsPage2Right = layout.fullWidthSectionsPage2Right || ["education", "hobbies"];
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -223,7 +266,7 @@ a:hover { text-decoration: underline; }
 /* --- Two-column layout ----------------------------------------------- */
 .columns {
   display: grid;
-  grid-template-columns: 60fr 40fr;
+  grid-template-columns: ${leftFr}fr ${rightFr}fr;
   gap: 0 var(--col-gap);
 }
 
@@ -360,23 +403,12 @@ a:hover { text-decoration: underline; }
   <div class="columns">
     <!-- Left column -->
     <div class="col-left">
-      <div class="cv-section">
-        <div class="cv-section-title">Experience</div>
-        ${renderExperience(data.experience)}
-      </div>
+      ${leftSections.map(renderSectionByName).join("\n")}
     </div>
 
     <!-- Right column -->
     <div class="col-right">
-      <div class="cv-section">
-        <div class="cv-section-title">Technical Skills</div>
-        ${renderTechnicalSkills(data.technicalSkills)}
-      </div>
-
-      <div class="cv-section">
-        <div class="cv-section-title">Key Skills</div>
-        ${renderKeySkills(data.keySkills)}
-      </div>
+      ${rightSections.map(renderSectionByName).join("\n")}
     </div>
   </div>
 </div>
@@ -386,23 +418,12 @@ a:hover { text-decoration: underline; }
   <div class="columns">
     <!-- Left column -->
     <div class="col-left">
-      <div class="cv-section">
-        <div class="cv-section-title">Certification</div>
-        ${renderCertifications(data.certifications)}
-      </div>
+      ${fullWidthSectionsPage2Left.map(renderSectionByName).join("\n")}
     </div>
 
     <!-- Right column -->
     <div class="col-right">
-      <div class="cv-section">
-        <div class="cv-section-title">Education</div>
-        ${renderEducation(data.education)}
-      </div>
-
-      <div class="cv-section">
-        <div class="cv-section-title">Hobbies</div>
-        ${renderHobbies(data.hobbies)}
-      </div>
+      ${fullWidthSectionsPage2Right.map(renderSectionByName).join("\n")}
     </div>
   </div>
 </div>
@@ -521,7 +542,7 @@ async function main() {
     });
     const page = await browser.newPage();
     await page.goto("file://" + tempHtml.replace(/\\/g, "/"), {
-      waitUntil: "networkidle0",
+      waitUntil: "networkidle2",
     });
     await page.pdf({
       path: path.join(outDir, "resume.pdf"),
