@@ -25,11 +25,12 @@ Output files appear in `output/`:
 
 ## Build Commands
 
-| Command              | Output            |
-|----------------------|-------------------|
-| `npm run build`      | HTML + PDF        |
-| `npm run build:html` | HTML only         |
-| `npm run build:pdf`  | PDF only          |
+| Command               | Output                     |
+|-----------------------|----------------------------|
+| `npm run build`       | HTML + PDF                 |
+| `npm run build:html`  | HTML only                  |
+| `npm run build:pdf`   | PDF only                   |
+| `npm run build:pages` | Static HTML for site/pages |
 
 ## Editing Your Resume
 
