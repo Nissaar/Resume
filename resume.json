@@ -23,23 +23,6 @@
             "url": "https://www.credly.com/users/muhammad-nissaar-mushir-gopee.cb59e2f6"
         }
     },
-    "layout": {
-        "leftColumnRatio": 0.6,
-        "leftSections": [
-            "experience"
-        ],
-        "rightSections": [
-            "technicalSkills",
-            "keySkills"
-        ],
-        "fullWidthSectionsPage2Left": [
-            "certifications"
-        ],
-        "fullWidthSectionsPage2Right": [
-            "education",
-            "hobbies"
-        ]
-    },
     "experience": [
         {
             "title": "DevOps Engineer",
