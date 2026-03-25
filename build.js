@@ -83,10 +83,6 @@ function renderTechnicalSkills(skills) {
     .join("\n")}</ul>`;
 }
 
-function renderKeySkills(skills) {
-  return `<ul class="key-skills">${skills.map((s) => `<li>${escapeHtml(s)}</li>`).join("\n")}</ul>`;
-}
-
 function renderCertifications(certs) {
   return certs
     .map(
