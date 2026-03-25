@@ -37,7 +37,7 @@ jobs:
         run: node build.js --pages
 
       - name: Add CNAME for custom domain
-        run: echo "resume.mgopee.page" > output/CNAME
+        run: cp CNAME output/CNAME
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/master'
