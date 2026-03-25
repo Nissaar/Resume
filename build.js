@@ -517,9 +517,13 @@ async function main() {
     if (pdfOnly) fs.writeFileSync(tempHtml, html, "utf-8");
 
     const puppeteer = require("puppeteer");
+    const launchArgs = [];
+    if (process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true") {
+      launchArgs.push("--no-sandbox", "--disable-setuid-sandbox");
+    }
     const browser = await puppeteer.launch({
       headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: launchArgs,
     });
     const page = await browser.newPage();
     await page.goto("file://" + tempHtml.replace(/\\/g, "/"), {
