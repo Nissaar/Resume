@@ -33,8 +33,13 @@ jobs:
       - name: Build resume (HTML + PDF + Pages index)
         run: node build.js --pages
 
-      - name: Add CNAME for custom domain
-        run: cp CNAME output/CNAME
+      - name: Add CNAME for custom domain (optional)
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME output/CNAME
+          else
+            echo "No CNAME file found; skipping custom domain copy"
+          fi
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/master'
