@@ -1,6 +1,6 @@
 {
     "name": "Muhammad Nissaar Mushir Gopee",
-    "tagline": "DevOps Engineer/SysAdmin",
+    "tagline": "Cloud & DevOps Engineer | SRE",
     "contact": {
         "email": "nisgopee@proton.me",
         "phone": "+23052597140",
@@ -25,17 +25,31 @@
     },
     "experience": [
         {
+            "title": "Cloud & DevOps Engineer",
+            "company": "AQR8",
+            "dates": "11/2025 -- Ongoing",
+            "items": [
+                "Lead technical assessments and cloud audits, and deliver modernization and migration roadmaps for enterprise platforms",
+                "Design, deploy, and operate cloud-native and hybrid infrastructure using Terraform and Ansible, with strong automation and reliability focus",
+                "Build and operate container platforms on Kubernetes (including Azure Kubernetes Service) and Docker, with GitOps-driven delivery patterns",
+                "Define and implement CI/CD pipelines with Azure DevOps, GitHub Actions, and GitLab CI/CD to improve release quality and deployment frequency",
+                "Own SRE operations: incident response, post-mortems, toil reduction, runbook automation, and continuous service improvement",
+                "Deploy and administer observability platforms (Dynatrace, CloudWatch, Grafana), build dashboards and alerts, and drive performance tuning",
+                "Apply DevSecOps controls across pipelines and cloud environments, including vulnerability reduction and policy-based governance",
+                "Delivered a major Azure transformation from a legacy VM stack (Apache, PHP-FPM) to PaaS services: App Service with Docker containers, Azure Container Registry, and MySQL Flexible Server, automated with Terraform and Azure DevOps pipelines"
+            ]
+        },
+        {
             "title": "DevOps Engineer",
             "company": "SQLI UK & ME",
-            "dates": "02/2023 -- Ongoing",
+            "dates": "02/2023 -- 09/2025",
             "items": [
-                "Provision and manage AWS infrastructure (EC2, ECS with autoscaling, ALB/NLB) using both Terraform and manual intervention, ensuring SLA compliance",
-                "Managed and automated networking configurations across AWS environments, including SSL certs, Load Balancers (ALB, NLB, ELB), VPN tunnels (Site-to-Site), Network Security (Security Groups, Web ACL), Route53 and diagnostic settings.",
-                "Drive CI/CD pipeline improvements and release automation using tools like Git, Ansible, and Terraform",
-                "Monitor infrastructure via CloudWatch (logs, metrics, alerts) and New Relic and maintain SLA compliance",
-                "Collaborate with Dev and Support teams for smooth service delivery and project rollouts",
-                "Maintain internal runbooks, KBs, and documentation for ops standardization and reference",
-                "Support change and incident management, contributing to continuous service improvement (CSI) efforts"
+                "Designed and maintained cloud infrastructure across AWS, Azure, and GCP for multiple client environments, balancing reliability, performance, and cost",
+                "Built and improved CI/CD workflows (GitLab CI/CD, GitHub Actions, Jenkins) to standardize releases and reduce manual deployment effort",
+                "Automated provisioning and operations using Infrastructure as Code and scripting (Terraform, Ansible, Bash, Python)",
+                "Supported containerized platforms and workloads (Docker, Kubernetes), including troubleshooting, scaling, and day-2 operations",
+                "Managed and supported platform.sh environments as part of delivery and production operations",
+                "Led incident response, root-cause analysis, and preventive remediation actions to improve service stability"
             ]
         },
         {
@@ -64,91 +78,65 @@
     ],
     "technicalSkills": [
         {
-            "category": "Linux Technologies",
-            "items": "Redhat, CentOS, Debian, Ubuntu, Oracle Linux"
+            "category": "Cloud Platforms",
+            "items": "AWS, Azure, GCP, Aliyun, Oracle Cloud, Linode, platform.sh, Azure App Service"
         },
         {
-            "category": "Web Technologies",
-            "items": "Apache, Nginx, Varnish, Tomcat, PHP-FPM, HAProxy"
+            "category": "Containers & Orchestration",
+            "items": "Docker, Docker Compose, Kubernetes, AKS, Helm, OpenShift"
         },
         {
-            "category": "Database",
-            "items": "MySQL, MariaDB, PostgreSQL"
+            "category": "IaC, Automation & Scripting",
+            "items": "Terraform, Ansible, Packer, Bash, Python, Git"
         },
         {
-            "category": "File Transfer Application",
-            "items": "FTP, PROFTPD, SFTP, rsync"
+            "category": "CI/CD & GitOps",
+            "items": "Azure DevOps Pipelines, GitHub Actions, GitLab CI/CD, Jenkins, GitOps workflows"
         },
         {
-            "category": "Scripting",
-            "items": "Bash, Python"
+            "category": "SRE & Observability",
+            "items": "Dynatrace, Prometheus, Grafana, CloudWatch, New Relic, Datadog, ELK, Loki, Zabbix, Site24x7, Pingdom, Icinga (Nagios based), SLI/SLO, Alerting, Post-mortems, Toil reduction"
         },
         {
-            "category": "Automation tools",
-            "items": "Terraform, Git, Ansible, Packer"
+            "category": "Operating Systems & Hardening",
+            "items": "Red Hat, CentOS, Debian, Ubuntu, Oracle Linux, SELinux, AppArmor, Firewall, iptables"
         },
         {
-            "category": "Containerization",
-            "items": "Docker, Docker-compose, Kubernetes"
+            "category": "Networking & Load Balancing",
+            "items": "IP configuration, Routing, SSL/TLS, VPN, Subnets, VPC, ACL, WAF, Azure Load Balancer, AWS Load Balancer (ALB, ELB), HAProxy, ProxySQL"
         },
         {
-            "category": "Cloud Technologies",
-            "items": "AWS, Azure, GCP, Aliyun, Platform.sh, Oracle Cloud (Personal experience), Linode (Personal Experience)"
+            "category": "Web & Application Stack",
+            "items": "Apache, Nginx, Varnish, Tomcat, PHP-FPM, HTML, CSS, JavaScript, PHP"
         },
         {
-            "category": "CDN/Caching",
-            "items": "Cloudflare, Fastly, Cloudfront"
+            "category": "Databases & Storage",
+            "items": "MySQL, MariaDB, PostgreSQL, Amazon S3, MinIO"
         },
         {
-            "category": "Monitoring",
-            "items": "Zabbix, Site24x7, Datadog, Icinga (Nagios based), New relic, Grafana, Pingdom, Cloudwatch"
+            "category": "Virtualization & Configuration Management",
+            "items": "VMware, Proxmox, Chef administration, Salt"
         },
         {
-            "category": "CMS",
-            "items": "Wordpress, Drupal, Jahia, EzPublish, Magento"
+            "category": "CMS, File Transfer & Messaging",
+            "items": "WordPress, Drupal, Jahia, EzPublish, Magento, FTP, ProFTPD, SFTP, rsync, Postfix"
         },
         {
-            "category": "Virtualization",
-            "items": "VMWare, Proxmox"
+            "category": "CDN & Caching",
+            "items": "Cloudflare, Fastly, CloudFront"
         },
         {
-            "category": "Configuration Management",
-            "items": "Chef administration, Salt"
-        },
-        {
-            "category": "Networking",
-            "items": "IP Configuration, Routing, SSL/TLS, VPN, Load Balancers, Subnets, VPC, ACL, WAF"
-        },
-        {
-            "category": "OS Hardening",
-            "items": "SELinux, AppArmor, Firewall, IPtables"
-        },
-        {
-            "category": "Load balancing",
-            "items": "Azure Load Balancer, AWS Load Balancer (ALB, ELB), ProxySQL"
-        },
-        {
-            "category": "Web Programming",
-            "items": "HTML, CSS, JavaScript, PHP"
-        },
-        {
-            "category": "Mail",
-            "items": "Postfix"
-        },
-        {
-            "category": "Elasticsearch",
-            "items": "(Administration)"
-        },
-        {
-            "category": "Storage",
-            "items": "S3: AWS, Self-hosted Minio"
+            "category": "Search",
+            "items": "Elasticsearch (Administration)"
         }
     ],
     "keySkills": [
-        "Googling",
-        "Self and quick learner",
-        "Critical thinker",
-        "Team player"
+        "Technical leadership and ownership",
+        "Incident management and problem solving",
+        "Cross-functional collaboration",
+        "Continuous improvement mindset",
+        "Autonomous and structured execution",
+        "Customer and service orientation"
     ],
     "certifications": [
         {
@@ -185,6 +173,20 @@
             "dates": "December 2024 - December 2026",
             "linkLabel": "Link to certificate",
             "linkUrl": "https://www.credly.com/badges/4d8f9a96-b840-416d-931d-3f9f62cb0d41/public_url"
+        },
+        {
+            "title": "Scaleway Associate: Kubernetes",
+            "issueInfo": "Issued: February 2026",
+            "dates": "February 2026 - February 2028",
+            "linkLabel": "Link to certificate",
+            "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/6549515548901940"
+        },
+        {
+            "title": "Scaleway Professional: Solution Architect",
+            "issueInfo": "Issued: April 2026",
+            "dates": "April 2026 - April 2028",
+            "linkLabel": "Link to certificate",
+            "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/7180440573054996"
         }
     ],
     "education": [
