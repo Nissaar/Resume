@@ -75,17 +75,16 @@ function renderExperience(jobs) {
 }
 
 function renderProjects(projects) {
-  return projects
+  return `<div class="projects-grid">${projects
     .map(
-      (project, i) => `
-      <div class="cv-event">
+      (project) => `
+      <div class="project-card">
         <div class="cv-event-title">${escapeHtml(project.name)}</div>
         ${project.url ? `<div class="cv-event-subtitle"><a href="${escapeHtml(project.url)}">${escapeHtml(project.url)}</a></div>` : ""}
         <ul>${project.items.map((it) => `<li>${escapeHtml(it)}</li>`).join("\n")}</ul>
-      </div>
-      ${i < projects.length - 1 ? '<div class="divider"></div>' : ""}`
+      </div>`
     )
-    .join("\n");
+    .join("\n")}</div>`;
 }
 
 function renderTechnicalSkills(skills) {
@@ -322,6 +321,14 @@ a:hover { text-decoration: underline; }
   margin-bottom: 0.03em;
   break-inside: avoid;
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25em 0.7em;
+}
+.project-card {
+  break-inside: avoid;
+}
 .skill-category {
   font-weight: 700;
   color: var(--color-accent);
@@ -396,13 +403,6 @@ a:hover { text-decoration: underline; }
         <div class="cv-section-title">Experience</div>
         ${renderExperience(data.experience)}
       </div>
-
-      ${data.projects && data.projects.length ? `
-      <div class="cv-section">
-        <div class="cv-section-title">Projects</div>
-        ${renderProjects(data.projects)}
-      </div>
-      ` : ""}
     </div>
 
     <!-- Right column -->
@@ -423,6 +423,13 @@ a:hover { text-decoration: underline; }
       </div>
     </div>
   </div>
+
+  ${data.projects && data.projects.length ? `
+  <div class="cv-section">
+    <div class="cv-section-title">Projects</div>
+    ${renderProjects(data.projects)}
+  </div>
+  ` : ""}
 
   <div class="cv-section">
     <div class="cv-section-title">Technical Skills</div>
