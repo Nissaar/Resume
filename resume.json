@@ -76,6 +76,26 @@
             ]
         }
     ],
+    "projects": [
+        {
+            "name": "Fishing Tracker Pro",
+            "url": "https://www.nulapess.app/",
+            "items": [
+                "Built and maintain a fishing companion platform for Mauritius anglers with real-time tide, weather, and moon-phase context",
+                "Implemented catch logging and analytics to track species, conditions, and patterns across fishing trips",
+                "Integrated solunar-based prediction features to help users identify optimal fishing windows"
+            ]
+        },
+        {
+            "name": "Zakat Calculator",
+            "url": "https://www.zakaat.info/",
+            "items": [
+                "Developed a practical Zakat calculator for gold, silver, and cash with benchmark-aware Nisaab checks",
+                "Implemented clear calculation guidance (purity conversion, thresholds, combined assets, and 2.5% rate)",
+                "Designed the tool for transparent, user-friendly estimation with advisory context for local validation"
+            ]
+        }
+    ],
     "technicalSkills": [
         {
             "category": "Cloud Platforms",
