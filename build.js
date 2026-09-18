@@ -96,17 +96,26 @@ function renderTechnicalSkills(skills) {
     .join("\n")}</ul>`;
 }
 
-function renderCertifications(certs) {
-  return certs
+function renderCertifications(groups) {
+  return groups
     .map(
-      (cert, i) => `
-      <div class="cv-event">
-        <div class="cv-event-title">${escapeHtml(cert.title)}</div>
-        <div class="cv-event-subtitle">${escapeHtml(cert.issueInfo)}</div>
-        <div class="cv-event-date"><i class="fa-regular fa-calendar"></i> ${escapeHtml(cert.dates)}</div>
-        ${cert.linkUrl ? `<div class="cert-link"><a href="${escapeHtml(cert.linkUrl)}">${escapeHtml(cert.linkLabel)}</a></div>` : ""}
+      (group, gi) => `
+      <div class="cert-group">
+        <div class="cert-provider">${escapeHtml(group.provider)}</div>
+        ${group.items
+          .map(
+            (cert, i) => `
+          <div class="cv-event">
+            <div class="cv-event-title">${escapeHtml(cert.title)}</div>
+            <div class="cv-event-subtitle">${escapeHtml(cert.issueInfo)}</div>
+            <div class="cv-event-date"><i class="fa-regular fa-calendar"></i> ${escapeHtml(cert.dates)}</div>
+            ${cert.linkUrl ? `<div class="cert-link"><a href="${escapeHtml(cert.linkUrl)}">${escapeHtml(cert.linkLabel)}</a></div>` : ""}
+          </div>
+          ${i < group.items.length - 1 ? '<div class="divider"></div>' : ""}`
+          )
+          .join("\n")}
       </div>
-      ${i < certs.length - 1 ? '<div class="divider"></div>' : ""}`
+      ${gi < groups.length - 1 ? '<div class="divider"></div>' : ""}`
     )
     .join("\n");
 }
@@ -229,6 +238,13 @@ a:hover { text-decoration: underline; }
 .header-contact i { color: var(--color-accent); margin-right: 0.15em; }
 .header-contact a { color: var(--color-body); }
 
+/* --- Summary ----------------------------------------------------------- */
+.header-summary {
+  font-size: 0.9em;
+  color: var(--color-body);
+  margin-top: 0.25em;
+}
+
 /* --- Key skills (inline below header) -------------------------------- */
 .header-keyskills {
   margin-top: 0.15em;
@@ -299,6 +315,15 @@ a:hover { text-decoration: underline; }
 .cert-link {
   font-size: 0.85em;
   margin-top: 0.1em;
+}
+.cert-group { margin-bottom: 0.1em; }
+.cert-provider {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95em;
+  color: var(--color-heading);
+  text-transform: uppercase;
+  margin-bottom: 0.15em;
 }
 
 /* --- Divider --------------------------------------------------------- */
@@ -390,6 +415,7 @@ a:hover { text-decoration: underline; }
     <div class="header-contact">
       ${renderContactInfo(data.contact)}
     </div>
+    ${data.summary ? `<div class="header-summary">${escapeHtml(data.summary)}</div>` : ""}
     <div class="cv-section-title">Key Skills</div>
     <ul class="header-keyskills">
       ${data.keySkills.map((s) => `<li>${escapeHtml(s)}</li>`).join("\n      ")}

@@ -1,6 +1,7 @@
 {
     "name": "Muhammad Nissaar Mushir Gopee",
     "tagline": "Cloud & DevOps Engineer | SRE",
+    "summary": "Cloud & DevOps engineer with 7+ years of experience designing, automating, and operating cloud-native and hybrid infrastructure across Azure, AWS, and GCP. Specializes in Kubernetes, Terraform-driven IaC, CI/CD pipelines, and SRE practices, with a track record of leading cloud migrations, reducing toil, and improving release reliability.",
     "contact": {
         "email": "nisgopee@proton.me",
         "phone": "+23052597140",
@@ -160,53 +161,68 @@
     ],
     "certifications": [
         {
-            "title": "Azure Administrator Associate",
-            "issueInfo": "Issued: June 2021",
-            "dates": "June 2021 - June 2026",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://learn.microsoft.com/api/credentials/share/en-us/NissaarGopee-2966/E59338F92646486E?sharingId=F6B9A3B0B57C2FFE"
+            "provider": "Azure",
+            "items": [
+                {
+                    "title": "Azure Administrator Associate",
+                    "issueInfo": "Issued: June 2026",
+                    "dates": "June 2026 - June 2027",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://learn.microsoft.com/api/credentials/share/en-us/NissaarGopee-2966/E59338F92646486E?sharingId=F6B9A3B0B57C2FFE"
+                },
+                {
+                    "title": "Azure Solutions Architect Expert",
+                    "issueInfo": "Issued: June 2026",
+                    "dates": "June 2026 - June 2027",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://learn.microsoft.com/api/credentials/share/en-us/NissaarGopee-2966/79BE664389B9DF06?sharingId=F6B9A3B0B57C2FFE"
+                }
+            ]
         },
         {
-            "title": "Azure Solutions Architect Expert",
-            "issueInfo": "Issued: June 2021",
-            "dates": "June 2021 - June 2026",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://learn.microsoft.com/api/credentials/share/en-us/NissaarGopee-2966/79BE664389B9DF06?sharingId=F6B9A3B0B57C2FFE"
+            "provider": "GCP",
+            "items": [
+                {
+                    "title": "GCP Cloud Digital Leader",
+                    "issueInfo": "Issued: December 2024",
+                    "dates": "December 2024 - December 2027",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://www.credly.com/badges/2de7414f-2030-4dde-8001-5466ae6ca521/public_url"
+                },
+                {
+                    "title": "GCP Professional Cloud Architect",
+                    "issueInfo": "Issued: December 2024",
+                    "dates": "December 2024 - December 2026",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://www.credly.com/badges/4d8f9a96-b840-416d-931d-3f9f62cb0d41/public_url"
+                }
+            ]
         },
         {
-            "title": "OCI 2023 Certified Foundations Associate",
-            "issueInfo": "Issued: June 2023",
-            "dates": "June 2023 - June 2025",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C6006D2870A6675AA7CD41C56EFD7E031BEEC4BAAB5778CA587CD9B77117314D"
-        },
-        {
-            "title": "GCP Cloud Digital Leader",
-            "issueInfo": "Issued: December 2024",
-            "dates": "December 2024 - December 2027",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://www.credly.com/badges/2de7414f-2030-4dde-8001-5466ae6ca521/public_url"
-        },
-        {
-            "title": "GCP Professional Cloud Architect",
-            "issueInfo": "Issued: December 2024",
-            "dates": "December 2024 - December 2026",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://www.credly.com/badges/4d8f9a96-b840-416d-931d-3f9f62cb0d41/public_url"
-        },
-        {
-            "title": "Scaleway Associate: Kubernetes",
-            "issueInfo": "Issued: February 2026",
-            "dates": "February 2026 - February 2028",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/6549515548901940"
-        },
-        {
-            "title": "Scaleway Professional: Solution Architect",
-            "issueInfo": "Issued: April 2026",
-            "dates": "April 2026 - April 2028",
-            "linkLabel": "Link to certificate",
-            "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/7180440573054996"
+            "provider": "Scaleway",
+            "items": [
+                {
+                    "title": "Scaleway Associate: Kubernetes",
+                    "issueInfo": "Issued: February 2026",
+                    "dates": "February 2026 - February 2028",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/6549515548901940"
+                },
+                {
+                    "title": "Scaleway Professional: Solution Architect",
+                    "issueInfo": "Issued: April 2026",
+                    "dates": "April 2026 - April 2028",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/7180440573054996"
+                },
+                {
+                    "title": "Scaleway Associate: Network",
+                    "issueInfo": "Issued: September 2026",
+                    "dates": "September 2026 - September 2028",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://scaleway.360learning.com/redirect/api/certification/7066235472905378/authed/html"
+                }
+            ]
         }
     ],
     "education": [
@@ -223,9 +239,8 @@
                 "Systems Analysis and Design",
                 "IT Project Management",
                 "Principles of Internet Technologies",
-                "Management Information Systems",
                 "Computer Network Technology",
-                "Informations systems",
+                "Information Systems",
                 "Software development"
             ]
         }
