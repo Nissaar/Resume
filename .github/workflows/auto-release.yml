@@ -32,6 +32,18 @@ jobs:
           fi
           echo "tag=$next" >> "$GITHUB_OUTPUT"
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build resume (HTML + PDF)
+        run: node build.js
+
       - name: Create release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -39,3 +51,10 @@ jobs:
           gh release create "${{ steps.version.outputs.tag }}" \
             --target "${{ github.sha }}" \
             --generate-notes
+
+      - name: Upload resume assets to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ steps.version.outputs.tag }}" \
+            output/resume.pdf output/resume.html
