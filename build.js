@@ -87,6 +87,19 @@ function renderProjects(projects) {
     .join("\n")}</div>`;
 }
 
+function renderOpenSource(contribs) {
+  return `<div class="oss-list">${contribs
+    .map(
+      (c) => `
+      <div class="project-card">
+        <div class="cv-event-title">${c.url ? `<a href="${escapeHtml(c.url)}">${escapeHtml(c.name)}</a>` : escapeHtml(c.name)}</div>
+        ${c.links && c.links.length ? `<div class="cv-event-subtitle">${c.links.map((l) => `<a href="${escapeHtml(l.url)}">${escapeHtml(l.label)}</a>`).join(" · ")}</div>` : ""}
+        <ul>${c.items.map((it) => `<li>${escapeHtml(it)}</li>`).join("\n")}</ul>
+      </div>`
+    )
+    .join("\n")}</div>`;
+}
+
 function renderTechnicalSkills(skills) {
   return `<ul class="tech-skills">${skills
     .map(
@@ -349,10 +362,18 @@ a:hover { text-decoration: underline; }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.25em 0.7em;
+  gap: 0.25em 1.2em;
 }
 .project-card {
   break-inside: avoid;
+}
+.project-card ul {
+  margin: 0.05em 0 0.02em 1.1em;
+  font-size: 0.9em;
+}
+.oss-list {
+  display: grid;
+  gap: 0.25em;
 }
 .skill-category {
   font-weight: 700;
@@ -429,6 +450,13 @@ a:hover { text-decoration: underline; }
         <div class="cv-section-title">Experience</div>
         ${renderExperience(data.experience)}
       </div>
+
+      ${data.openSource && data.openSource.length ? `
+      <div class="cv-section">
+        <div class="cv-section-title">Open Source Contributions</div>
+        ${renderOpenSource(data.openSource)}
+      </div>
+      ` : ""}
     </div>
 
     <!-- Right column -->

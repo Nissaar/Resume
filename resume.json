@@ -77,14 +77,63 @@
             ]
         }
     ],
+    "openSource": [
+        {
+            "name": "Gogs (self-hosted Git service)",
+            "url": "https://github.com/gogs/gogs",
+            "links": [
+                { "label": "PR #8423 (open)", "url": "https://github.com/gogs/gogs/pull/8423" }
+            ],
+            "items": [
+                "Improved the repository migration page: the repository name is now pre-filled from the clone address (HTTP(S), SSH, trailing slashes, query strings) and never overwrites a name typed by hand"
+            ]
+        },
+        {
+            "name": "meteomoris (Mauritius weather library, 75k+ downloads)",
+            "url": "https://github.com/Abdur-rahmaanJ/meteomoris",
+            "links": [
+                { "label": "PR #51 (merged)", "url": "https://github.com/Abdur-rahmaanJ/meteomoris/pull/51" },
+                { "label": "PR #52 (merged)", "url": "https://github.com/Abdur-rahmaanJ/meteomoris/pull/52" }
+            ],
+            "items": [
+                "Added moonrise/moonset support for Mauritius and Rodrigues: HTML table parsing of the Meteorological Services data, daily caching, library API and CLI commands",
+                "Documented the new commands in the README"
+            ]
+        }
+    ],
     "projects": [
+        {
+            "name": "JewelMS",
+            "items": [
+                "Built a jewellery shop management system covering stock, point of sale, receipts, orders, customers, reports and audit logs, with role-based permissions",
+                "Added customer ID-card scanning (OCR and AI-assisted extraction) and barcode scanning, delivered as an installable PWA",
+                "Stack: React 19, TypeScript, Express, PostgreSQL (Drizzle ORM), Docker; covered by Playwright API, E2E and unit tests"
+            ]
+        },
+        {
+            "name": "Google Photos Cleaner (Android)",
+            "url": "https://github.com/Nissaar/google-photos-cleaner",
+            "items": [
+                "Built a Kotlin Android app to review a Google Photos library month by month with swipe-to-keep/delete, deleting to the Google Photos trash, with no backend or analytics",
+                "Worked around the 2025 removal of the Photos API scopes by running calls from inside an embedded WebView session, so no Google credential is ever stored",
+                "Secured the app with an encrypted SQLCipher database (key in Android Keystore), biometric lock, FLAG_SECURE and a restricted network config"
+            ]
+        },
+        {
+            "name": "Qasida App",
+            "items": [
+                "Built a Django platform that collects naat and qasida poetry from multiple websites, with Celery/Redis crawlers, deduplication, OCR of scanned pages and Urdu/Persian/Arabic transliteration",
+                "Added offline machine translation (Argos Translate) and full-text search; deployed with Docker, PostgreSQL, Gunicorn and Nginx"
+            ]
+        },
         {
             "name": "Fishing Tracker Pro",
             "url": "https://www.nulapess.app/",
             "items": [
                 "Built and maintain a fishing companion platform for Mauritius anglers with real-time tide, weather, and moon-phase context",
                 "Implemented catch logging and analytics to track species, conditions, and patterns across fishing trips",
-                "Integrated solunar-based prediction features to help users identify optimal fishing windows"
+                "Integrated solunar-based prediction features to help users identify optimal fishing windows",
+                "Stack: React, Node.js/Express, Docker, deployed behind Traefik and Cloudflare"
             ]
         },
         {

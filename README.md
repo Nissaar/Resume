@@ -42,6 +42,8 @@ Open `resume.json` in any editor. The file is self-explanatory — every section
 | `tagline`          | Header tagline       |
 | `contact`          | Contact info row     |
 | `experience[]`     | Experience section   |
+| `openSource[]`     | Open Source Contributions |
+| `projects[]`       | Projects             |
 | `technicalSkills[]`| Technical Skills     |
 | `keySkills[]`      | Key Skills           |
 | `certifications[]` | Certifications       |
