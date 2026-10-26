@@ -215,7 +215,9 @@
                 {
                     "title": "AWS Certified Solutions Architect - Associate",
                     "issueInfo": "Issued: October 2026",
-                    "dates": "October 2026 - October 2029"
+                    "dates": "October 2026 - October 2029",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://www.credly.com/badges/d332791d-a3f8-40f5-854a-609d07d11fb8/public_url"
                 }
             ]
         },
