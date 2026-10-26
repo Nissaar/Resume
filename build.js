@@ -42,19 +42,19 @@ function renderContactInfo(c) {
     );
   if (c.homepage)
     items.push(
-      `<span class="info-item"><i class="fa-solid fa-globe"></i> <a href="${escapeHtml(c.homepage.url)}">${escapeHtml(c.homepage.label)}</a></span>`
+      `<span class="info-item"><i class="fa-solid fa-globe"></i> <a href="${escapeHtml(c.homepage.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.homepage.label)}</a></span>`
     );
   if (c.linkedin)
     items.push(
-      `<span class="info-item"><i class="fa-brands fa-linkedin"></i> <a href="${escapeHtml(c.linkedin.url)}">${escapeHtml(c.linkedin.label)}</a></span>`
+      `<span class="info-item"><i class="fa-brands fa-linkedin"></i> <a href="${escapeHtml(c.linkedin.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.linkedin.label)}</a></span>`
     );
   if (c.github)
     items.push(
-      `<span class="info-item"><i class="fa-brands fa-github"></i> <a href="${escapeHtml(c.github.url)}">${escapeHtml(c.github.label)}</a></span>`
+      `<span class="info-item"><i class="fa-brands fa-github"></i> <a href="${escapeHtml(c.github.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.github.label)}</a></span>`
     );
   if (c.credly)
     items.push(
-      `<span class="info-item"><a href="${escapeHtml(c.credly.url)}">${escapeHtml(c.credly.label)}</a></span>`
+      `<span class="info-item"><a href="${escapeHtml(c.credly.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.credly.label)}</a></span>`
     );
   return items.join("\n");
 }
@@ -80,7 +80,7 @@ function renderProjects(projects) {
       (project) => `
       <div class="project-card">
         <div class="cv-event-title">${escapeHtml(project.name)}</div>
-        ${project.url ? `<div class="cv-event-subtitle"><a href="${escapeHtml(project.url)}">${escapeHtml(project.url)}</a></div>` : ""}
+        ${project.url ? `<div class="cv-event-subtitle"><a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.url)}</a></div>` : ""}
         <ul>${project.items.map((it) => `<li>${escapeHtml(it)}</li>`).join("\n")}</ul>
       </div>`
     )
@@ -92,8 +92,8 @@ function renderOpenSource(contribs) {
     .map(
       (c) => `
       <div class="project-card">
-        <div class="cv-event-title">${c.url ? `<a href="${escapeHtml(c.url)}">${escapeHtml(c.name)}</a>` : escapeHtml(c.name)}</div>
-        ${c.links && c.links.length ? `<div class="cv-event-subtitle">${c.links.map((l) => `<a href="${escapeHtml(l.url)}">${escapeHtml(l.label)}</a>`).join(" · ")}</div>` : ""}
+        <div class="cv-event-title">${c.url ? `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.name)}</a>` : escapeHtml(c.name)}</div>
+        ${c.links && c.links.length ? `<div class="cv-event-subtitle">${c.links.map((l) => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.label)}</a>`).join(" · ")}</div>` : ""}
         <ul>${c.items.map((it) => `<li>${escapeHtml(it)}</li>`).join("\n")}</ul>
       </div>`
     )
@@ -122,7 +122,7 @@ function renderCertifications(groups) {
             <div class="cv-event-title">${escapeHtml(cert.title)}</div>
             <div class="cv-event-subtitle">${escapeHtml(cert.issueInfo)}</div>
             <div class="cv-event-date"><i class="fa-regular fa-calendar"></i> ${escapeHtml(cert.dates)}</div>
-            ${cert.linkUrl ? `<div class="cert-link"><a href="${escapeHtml(cert.linkUrl)}">${escapeHtml(cert.linkLabel)}</a></div>` : ""}
+            ${cert.linkUrl ? `<div class="cert-link"><a href="${escapeHtml(cert.linkUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(cert.linkLabel)}</a></div>` : ""}
           </div>
           ${i < group.items.length - 1 ? '<div class="divider"></div>' : ""}`
           )
