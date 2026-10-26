@@ -241,6 +241,18 @@
             ]
         },
         {
+            "provider": "Dynatrace",
+            "items": [
+                {
+                    "title": "Dynatrace Essentials",
+                    "issueInfo": "Issued: July 2026",
+                    "dates": "July 2026 - July 2028",
+                    "linkLabel": "Link to certificate",
+                    "linkUrl": "https://www.credly.com/badges/4d89f695-0a30-4631-9f6b-3929712714a3/public_url"
+                }
+            ]
+        },
+        {
             "provider": "GCP",
             "items": [
                 {
